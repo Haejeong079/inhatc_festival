@@ -1,6 +1,7 @@
 // src/menu/SideMenu.jsx
 import React, { useState, useEffect } from 'react';
 import './SideMenu.css';
+import FestivalIntro from './FestivalIntro';
 
 function SideMenu({ onMenuClick }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +40,10 @@ function SideMenu({ onMenuClick }) {
           <li onClick={() => handleMenuItemClick('/인하월드 홈.png')}>
             <img src="/sidemn/1.png" alt="축제홈피" />
           </li>
-          <li onClick={() => {
-              handleMenuItemClick(['/hi/축제소개1.png', '/hi/축제소개2.png']);
-          }}>
-              <img src="/sidemn/2.png" alt="축제소개" />      
-          </li>
+
+          {/* FestivalIntro 컴포넌트 사용 */}
+          <FestivalIntro onClick={handleMenuItemClick} />
+
           <li onClick={() => handleMenuItemClick(['/부스/푸드트럭.png', '/부스/플리마켓.png'])}>
             <img src="/sidemn/3.png" alt="부스" />
           </li>
