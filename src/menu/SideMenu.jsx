@@ -1,7 +1,10 @@
 // src/menu/SideMenu.jsx
 import React, { useState, useEffect } from 'react';
 import './SideMenu.css';
-import FestivalIntro from './FestivalIntro';
+import FestivalIntro from '../Intro/FestivalIntro';
+import LineUp from '../lineup/LineUp';
+import FestivalEvent from '../festivalevent/FestivalEvent';
+import FestivalTimeTable from '../festivaltimetable/FestivalTimeTable';
 
 function SideMenu({ onMenuClick }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,15 +50,9 @@ function SideMenu({ onMenuClick }) {
           <li onClick={() => handleMenuItemClick(['/부스/푸드트럭.png', '/부스/플리마켓.png'])}>
             <img src="/sidemn/3.png" alt="부스" />
           </li>
-          <li onClick={() => handleMenuItemClick(['/lineup/폴블.png', '/lineup/릴보.png', '/lineup/백아.png', '/lineup/큐떱.png'])}>
-            <img src="/sidemn/4.png" alt="라인업" />
-          </li>
-          <li onClick={() => handleMenuItemClick('/sidemn/7.png')}>
-            <img src="/sidemn/5.png" alt="이벤트" />
-          </li>
-          <li onClick={() => handleMenuItemClick(['/타임테이블.png', '/타임테이블 31.png'])}>
-            <img src="/sidemn/6.png" alt="타임 테이블" />
-          </li>
+          <LineUp onClick={handleMenuItemClick}/>
+          <FestivalEvent onClick={handleMenuItemClick}/>
+          <FestivalTimeTable onClick={handleMenuItemClick}/>
         </ul>
       </div>
     </div>
